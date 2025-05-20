@@ -160,5 +160,22 @@
     }
   </script>
 
+<script>
+  function resizeToContent() {
+    const height = document.body.scrollHeight;
+    window.parent.postMessage({ type: 'resize-philip', height: height }, '*');
+  }
+
+  // Llamar al cargar
+  window.addEventListener('load', resizeToContent);
+
+  // También cuando el contenido cambie (envío de mensajes)
+  const chatContainer = document.getElementById('chat');
+  const observer = new MutationObserver(resizeToContent);
+  observer.observe(chatContainer, { childList: true, subtree: true });
+</script>
+
+
+  
 </body>
 </html>
