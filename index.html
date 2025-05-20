@@ -25,7 +25,8 @@
 
     .chat-box {
       width: 360px;
-      height: 540px;
+      min-height: 150px;
+      max-height: 540px;
       display: flex;
       flex-direction: column;
       background-color: white;
@@ -34,21 +35,21 @@
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       position: relative;
+      transition: height 0.3s ease;
     }
 
-    }
 
+   
     .messages {
-    flex-grow: 1;
-    height: calc(100% - 100px); /* deja espacio para header y barra de entrada */
-    overflow-y: auto;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-
-  }
-
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 15px;
+      box-sizing: border-box;
+      max-height: 400px;
     }
+
+
+ 
 
     .message {
       background: #f1f1f1;
